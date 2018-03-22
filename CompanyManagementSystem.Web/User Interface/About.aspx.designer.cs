@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CompanyManagementSystem.Web
+namespace CompanyManagementSystem.Web.User_Interface
 {
 
 

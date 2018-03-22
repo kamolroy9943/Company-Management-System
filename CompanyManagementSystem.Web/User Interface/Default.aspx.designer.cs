@@ -7,11 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CompanyManagementSystem.Web
+namespace CompanyManagementSystem.Web.User_Interface
 {
 
 
-    public partial class Contact
+    public partial class _Default
     {
     }
 }
