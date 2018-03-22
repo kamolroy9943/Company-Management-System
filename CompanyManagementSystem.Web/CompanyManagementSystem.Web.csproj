@@ -133,6 +133,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Business Logic Layer\" />
+    <Folder Include="Data Access Layer\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="User Interface\About.aspx" />
@@ -333,6 +335,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Models\Company.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="User Interface\About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

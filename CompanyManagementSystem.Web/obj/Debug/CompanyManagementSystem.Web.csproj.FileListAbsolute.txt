@@ -43,6 +43,5 @@ F:\Lict\AAAAA\CompanyManagementSystem.Web\CompanyManagementSystem.Web\bin\System
 F:\Lict\AAAAA\CompanyManagementSystem.Web\CompanyManagementSystem.Web\bin\Antlr3.Runtime.pdb
 F:\Lict\AAAAA\CompanyManagementSystem.Web\CompanyManagementSystem.Web\bin\Newtonsoft.Json.xml
 F:\Lict\AAAAA\CompanyManagementSystem.Web\CompanyManagementSystem.Web\bin\Microsoft.AspNet.FriendlyUrls.xml
-F:\Lict\AAAAA\CompanyManagementSystem.Web\CompanyManagementSystem.Web\obj\Debug\CompanyManagementSystem.Web.csprojResolveAssemblyReference.cache
 F:\Lict\AAAAA\CompanyManagementSystem.Web\CompanyManagementSystem.Web\obj\Debug\CompanyManagementSystem.Web.dll
 F:\Lict\AAAAA\CompanyManagementSystem.Web\CompanyManagementSystem.Web\obj\Debug\CompanyManagementSystem.Web.pdb
