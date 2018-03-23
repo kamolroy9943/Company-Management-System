@@ -138,6 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="User Interface\About.aspx" />
+    <Content Include="User Interface\CompanyEntry.aspx" />
     <Content Include="User Interface\Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -352,6 +353,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="User Interface\CompanyEntry.aspx.cs">
+      <DependentUpon>CompanyEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User Interface\CompanyEntry.aspx.designer.cs">
+      <DependentUpon>CompanyEntry.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User Interface\Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
