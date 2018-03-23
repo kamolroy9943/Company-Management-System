@@ -138,6 +138,7 @@
         <script type="text/javascript" src="<%= Page.ResolveUrl("~/Scripts/js/jquery.flot.resize.min.js") %>"></script>
         <script type="text/javascript" src="<%= Page.ResolveUrl("~/Scripts/js/jquery.peity.min.js") %>"></script>
         <script type="text/javascript" src="<%= Page.ResolveUrl("~/Scripts/js/fullcalendar.min.js") %>"></script>
+        <script type="text/javascript" src="<%= Page.ResolveUrl("~/Scripts/js/matrix.js") %>"></script>
         <script type="text/javascript" src="<%= Page.ResolveUrl("~/Scripts/js/matrix.dashboard.js") %>"></script>
         <script type="text/javascript" src="<%= Page.ResolveUrl("~/Scripts/js/jquery.gritter.min.js") %>"></script>
         <script type="text/javascript" src="<%= Page.ResolveUrl("~/Scripts/js/matrix.interface.js") %>"></script>
