@@ -133,8 +133,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Business Logic Layer\" />
-    <Folder Include="Data Access Layer\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="User Interface\About.aspx" />
@@ -337,6 +335,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Business Logic Layer\EmployeeUserManager.cs" />
+    <Compile Include="Data Access Layer\EmployeeUserGetWay.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\Section.cs" />
     <Compile Include="Site.Master.cs">
@@ -401,6 +401,8 @@
     <Compile Include="User Interface\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\EmployeeViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

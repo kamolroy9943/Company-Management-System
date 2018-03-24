@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="CompanyManagementSystem.Web.User_Interface.Login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="CompanyManagementSystem.Web.User_Interface.Login" EnableEventValidation="false"%>
 
 <!DOCTYPE html>
 
@@ -16,14 +16,16 @@
 <body>
     <form id="form1" runat="server">
         <div id="loginbox">
-            <form id="loginform" class="form-vertical">
+            <form id="loginform1" class="form-vertical" method="post">
+               
                 <div class="control-group normal_text">
                     <h3>
-
                         <img src="../Content/img/logo.png" alt="Logo" />
 
                     </h3>
+                  
                 </div>
+                <div style="color: red; font-size: medium; text-align: center"><asp:Label ID="messageLabel" runat="server" Text=""></asp:Label></div>
                 <div class="control-group">
                     <div class="controls">
                         <div class="main_input_box">
@@ -48,7 +50,7 @@
                 </div>
 
             </form>
-            <form id="recoverform" action="#" class="form-vertical">
+           <%-- <form id="recoverform" action="#" class="form-vertical">
                 <p class="normal_text">Enter your e-mail address below and we will send you instructions how to recover a password.</p>
 
                 <div class="controls">
@@ -67,7 +69,7 @@
 
                 <script src="../Scripts/js/jquery.min.js" type="text/javascript"></script>
                 <script src="../Scripts/js/matrix.login.js" type="text/javascript"></script>
-            </form>
+            </form>--%>
         </div>
     </form>
 </body>
