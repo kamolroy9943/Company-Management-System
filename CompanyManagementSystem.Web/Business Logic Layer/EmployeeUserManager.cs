@@ -1,4 +1,5 @@
 ﻿using CompanyManagementSystem.Web.Data_Access_Layer;
+using System.Data.SqlClient;
 
 namespace CompanyManagementSystem.Web.Business_Logic_Layer
 {
@@ -14,6 +15,11 @@ namespace CompanyManagementSystem.Web.Business_Logic_Layer
         public bool EmployeeExistsOrNot(string username, string password)
         {
             return _employeeUserGetWay.EmployeeExistsOrNot(username, password);
+        }
+
+        public SqlDataAdapter GetAllEmpoyee()
+        {
+            return _employeeUserGetWay.GetAllEmployee();
         }
     }
 }

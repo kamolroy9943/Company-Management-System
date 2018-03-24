@@ -41,5 +41,13 @@ namespace CompanyManagementSystem.Web.Data_Access_Layer
             }
 
         }
+        public SqlDataAdapter GetAllEmployee()
+        {
+             
+            SqlConnection connection = new SqlConnection(_connectionString);
+            string query = "SELECT * FROM Employee ";
+            SqlDataAdapter adp = new SqlDataAdapter(query, connection);
+            return adp;
+        }
     }
 }
