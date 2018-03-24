@@ -5,9 +5,9 @@
 <html>
 <head runat="server">
     <title></title>
-    <asp:ContentPlaceHolder ID="head" runat="server">
+  <%--  <asp:ContentPlaceHolder ID="head" runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
-    </asp:ContentPlaceHolder>
+    </asp:ContentPlaceHolder>--%>
     <link rel="stylesheet" href="~/Content/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/Content/css/bootstrap-responsive.min.css" />
     <link rel="stylesheet" href="~/Content/css/fullcalendar.css" />
