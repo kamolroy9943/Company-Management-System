@@ -145,7 +145,6 @@ hr{ border-top-color:#dadada;}
 	width: 220px;
 	z-index: 16;
 }
- 
 #sidebar > ul {
 	list-style: none;
 	margin: 0px 0 0;
@@ -1587,10 +1586,4 @@ div.dataTables_wrapper .ui-widget-header {
 	text-align: center;
 }
 #sidebar .content{ display:none;}
-}
-#sidebar .toggle-btn {
-    position: absolute;
-    left: 230px;
-    top: 20px;
-
 }

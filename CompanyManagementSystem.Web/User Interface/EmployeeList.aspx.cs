@@ -20,7 +20,5 @@ namespace CompanyManagementSystem.Web.User_Interface
             Data = new DataSet();
             adp.Fill(Data, "Employee");
         }
-
-
     }
 }

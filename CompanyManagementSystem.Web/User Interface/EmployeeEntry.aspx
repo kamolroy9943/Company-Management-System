@@ -1,4 +1,17 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EmployeeEntry.aspx.cs" Inherits="CompanyManagementSystem.Web.User_Interface.EmployeeEntry" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EmployeeEntry.aspx.cs" Inherits="CompanyManagementSystem.Web.User_Interface.EmployeeEntry" EnableEventValidation="false" %>
+
+<asp:Content ID="Content2" ContentPlaceHolderID="HeaderContentPlaceHolder" runat="Server">
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <style>
+        .textbox {
+            width: 311px;
+            height: 20px;
+            border-radius: 15px;
+        }
+    </style>
+
+    }
+</asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div id="content">
@@ -9,53 +22,92 @@
         <div class="container-fluid">
             <hr>
             <div class="row-fluid">
-                <div class="span6">
+                <div class="span12">
                     <div class="widget-box">
                         <div class="widget-title">
                             <span class="icon"><i class="icon-align-justify"></i></span>
-                            <h5>Personal-info</h5>
+                            <h5>Employe-info</h5>
                         </div>
-                        <div class="widget-content nopadding">
-                            <form action="#" method="get" class="form-horizontal">
+
+                        <div class="widget-content nopadding" style="margin-left: 50px; margin-top: 40px;">
+                            <div class="alert alert-success" style="height: 20px; width: 336px; border-radius: 20px;">
+                                <strong><asp:Label ID="message" runat="server" Text=""></asp:Label></strong>  
+                            </div>
+                            <form action="#" method="get" class="form-horizontal" style="padding: 40px 0px">
+                                <div class="control-group">
+                                    <label class="control-label">Full Name :</label>
+                                    <div class="controls">
+                                        <asp:TextBox ID="fullNameTextBox" class="span6" runat="server"></asp:TextBox>
+                                    </div>
+                                </div>
                                 <div class="control-group">
                                     <label class="control-label">First Name :</label>
                                     <div class="controls">
-                                        <input type="text" class="span11" placeholder="First name" />
+                                        <asp:TextBox ID="firstNameTextBox" class="span6" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Last Name :</label>
                                     <div class="controls">
-                                        <input type="text" class="span11" placeholder="Last name" />
+                                        <asp:TextBox ID="lastNameTextBox" class="span6" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label">Password input</label>
+                                    <label class="control-label">Email :</label>
                                     <div class="controls">
-                                        <input type="password" class="span11" placeholder="Enter Password" />
+                                        <asp:TextBox ID="emailTextBox" class="span6" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label">Company info :</label>
+                                    <label class="control-label">Mobile :</label>
                                     <div class="controls">
-                                        <input type="text" class="span11" placeholder="Company name" />
+                                        <asp:TextBox ID="mobileTextBox" class="span6" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label">Description field:</label>
+                                    <label class="control-label">Section :</label>
                                     <div class="controls">
-                                        <input type="text" class="span11" />
-                                        <span class="help-block">Description field</span>
+                                        <asp:TextBox ID="sectionTextBox" class="span6" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label">Message</label>
+                                    <label class="control-label">Designation :</label>
                                     <div class="controls">
-                                        <textarea class="span11"></textarea>
+                                        <asp:TextBox ID="DesignationTextBox" class="span6" runat="server"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">Salary :</label>
+                                    <div class="controls">
+                                        <asp:TextBox ID="salaryTextBox" class="span6" runat="server"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">Gander</label>
+                                    <div class="controls">
+                                        <asp:TextBox ID="genderTextBox" class="span6" runat="server"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">Date Of Birth :</label>
+                                    <div class="controls">
+                                        <asp:TextBox ID="dateOfBirthTextBox" class="span6" runat="server"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">Join Date :</label>
+                                    <div class="controls">
+                                        <asp:TextBox ID="joinDateTextBox" class="span6" runat="server"></asp:TextBox>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">Address :</label>
+                                    <div class="controls">
+                                        <asp:TextBox ID="addressTextBox" class="textArea" runat="server" TextMode="MultiLine"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="form-actions">
-                                    <button type="submit" class="btn btn-success">Save</button>
+                                    <asp:Button ID="btnEmployeeSave" runat="server" CssClass=" save btn btn-success" Text="Save" OnClick="btnEmployeeSave_Click" />
                                 </div>
                             </form>
                         </div>
@@ -65,3 +117,4 @@
         </div>
     </div>
 </asp:Content>
+

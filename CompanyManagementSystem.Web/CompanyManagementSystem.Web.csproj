@@ -135,6 +135,8 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\matrix-style.css" />
     <Content Include="User Interface\About.aspx" />
     <Content Include="User Interface\CompanyEntry.aspx" />
     <Content Include="User Interface\Contact.aspx" />
@@ -142,7 +144,6 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\css\bootstrap-responsive.min.css" />
     <Content Include="Content\css\bootstrap-wysihtml5.css" />
-    <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\colorpicker.css" />
     <Content Include="Content\css\datepicker.css" />
     <Content Include="Content\css\font-awesome.css" />
@@ -151,7 +152,6 @@
     <Content Include="Content\css\jquery.gritter.css" />
     <Content Include="Content\css\matrix-login.css" />
     <Content Include="Content\css\matrix-media.css" />
-    <Content Include="Content\css\matrix-style.css" />
     <Content Include="Content\css\select2.css" />
     <Content Include="Content\css\uniform.css" />
     <Content Include="Content\font-awesome\css\font-awesome.css" />
@@ -319,6 +319,7 @@
     <Content Include="User Interface\EmployeeEntry.aspx" />
     <Content Include="User Interface\EmployeeList.aspx" />
     <Content Include="User Interface\Login.aspx" />
+    <Content Include="User Interface\WebForm1.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -408,6 +409,13 @@
     </Compile>
     <Compile Include="User Interface\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User Interface\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\EmployeeViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
