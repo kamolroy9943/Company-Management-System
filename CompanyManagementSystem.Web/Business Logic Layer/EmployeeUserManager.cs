@@ -1,5 +1,6 @@
 ﻿using CompanyManagementSystem.Web.Data_Access_Layer;
-using System.Data.SqlClient;
+using CompanyManagementSystem.Web.Models;
+using System.Data;
 
 namespace CompanyManagementSystem.Web.Business_Logic_Layer
 {
@@ -17,9 +18,14 @@ namespace CompanyManagementSystem.Web.Business_Logic_Layer
             return _employeeUserGetWay.EmployeeExistsOrNot(username, password);
         }
 
-        public SqlDataAdapter GetAllEmpoyee()
+        public DataSet GetAllEmpoyee()
         {
             return _employeeUserGetWay.GetAllEmployee();
+        }
+
+        public Employee GetEmployeeById(int selectedItemValue)
+        {
+            return _employeeUserGetWay.GetEmployeeById(selectedItemValue);
         }
     }
 }

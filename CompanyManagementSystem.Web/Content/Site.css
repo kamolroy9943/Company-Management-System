@@ -39,8 +39,14 @@ label {
 .row-fluid .span6 {
     width: 38.717948717948715%;
     border-radius: 15px;
-    height: 32px;
+    height: 40px;
 }
+.row-fluid .span4 {
+    width: 25.717948717948715%;
+    border-radius: 20px;
+    height: 40px;
+    width: 255px;
+    }
 .row-fluid .textArea {
     width: 28.717948717948715%;
     border-radius: 15px;

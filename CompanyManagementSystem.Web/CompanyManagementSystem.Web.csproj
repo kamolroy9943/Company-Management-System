@@ -138,6 +138,7 @@
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\matrix-style.css" />
     <Content Include="User Interface\About.aspx" />
+    <Content Include="User Interface\AdminEntry.aspx" />
     <Content Include="User Interface\CompanyEntry.aspx" />
     <Content Include="User Interface\Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -337,7 +338,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Business Logic Layer\AdminManager.cs" />
     <Compile Include="Business Logic Layer\EmployeeUserManager.cs" />
+    <Compile Include="Data Access Layer\AdminGetWay.cs" />
     <Compile Include="Data Access Layer\EmployeeUserGetWay.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\Section.cs" />
@@ -356,6 +359,13 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="User Interface\AdminEntry.aspx.cs">
+      <DependentUpon>AdminEntry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User Interface\AdminEntry.aspx.designer.cs">
+      <DependentUpon>AdminEntry.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User Interface\CompanyEntry.aspx.cs">
       <DependentUpon>CompanyEntry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -417,6 +427,7 @@
     <Compile Include="User Interface\WebForm1.aspx.designer.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\AdminViewModel.cs" />
     <Compile Include="ViewModels\EmployeeViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
