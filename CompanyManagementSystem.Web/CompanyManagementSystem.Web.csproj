@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=18.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -135,6 +139,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\css\bootstrap-responsive.min.css" />
     <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\css\matrix-style.css" />
     <Content Include="User Interface\About.aspx" />
@@ -143,7 +148,6 @@
     <Content Include="User Interface\Contact.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\css\bootstrap-responsive.min.css" />
     <Content Include="Content\css\bootstrap-wysihtml5.css" />
     <Content Include="Content\css\colorpicker.css" />
     <Content Include="Content\css\datepicker.css" />
@@ -317,6 +321,7 @@
     <Content Include="User Interface\Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="User Interface\EmployeeAttendance.aspx" />
     <Content Include="User Interface\EmployeeEntry.aspx" />
     <Content Include="User Interface\EmployeeList.aspx" />
     <Content Include="User Interface\Login.aspx" />
@@ -339,9 +344,17 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Business Logic Layer\AdminManager.cs" />
+    <Compile Include="Business Logic Layer\BranchManager.cs" />
+    <Compile Include="Business Logic Layer\DesignationManager.cs" />
     <Compile Include="Business Logic Layer\EmployeeUserManager.cs" />
+    <Compile Include="Business Logic Layer\RoleManager.cs" />
+    <Compile Include="Business Logic Layer\SectionManager.cs" />
     <Compile Include="Data Access Layer\AdminGetWay.cs" />
+    <Compile Include="Data Access Layer\BranchGetWay.cs" />
+    <Compile Include="Data Access Layer\DesignationGetWay.cs" />
     <Compile Include="Data Access Layer\EmployeeUserGetWay.cs" />
+    <Compile Include="Data Access Layer\RoleGetWay.cs" />
+    <Compile Include="Data Access Layer\SectionGetWay.cs" />
     <Compile Include="Models\Company.cs" />
     <Compile Include="Models\Section.cs" />
     <Compile Include="Site.Master.cs">
@@ -399,6 +412,13 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
+    <Compile Include="User Interface\EmployeeAttendance.aspx.cs">
+      <DependentUpon>EmployeeAttendance.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User Interface\EmployeeAttendance.aspx.designer.cs">
+      <DependentUpon>EmployeeAttendance.aspx</DependentUpon>
+    </Compile>
     <Compile Include="User Interface\EmployeeEntry.aspx.cs">
       <DependentUpon>EmployeeEntry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -428,8 +448,13 @@
       <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\AdminViewModel.cs" />
+    <Compile Include="ViewModels\Attendance.cs" />
+    <Compile Include="ViewModels\BranchViewModel.cs" />
+    <Compile Include="ViewModels\DesignationViewModel.cs" />
     <Compile Include="ViewModels\EmployeeViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\RoleViewModel.cs" />
+    <Compile Include="ViewModels\SectionViewModel.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

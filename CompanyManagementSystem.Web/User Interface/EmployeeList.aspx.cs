@@ -1,5 +1,7 @@
 ﻿using CompanyManagementSystem.Web.Business_Logic_Layer;
+using CompanyManagementSystem.Web.ViewModels;
 using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace CompanyManagementSystem.Web.User_Interface
@@ -15,7 +17,9 @@ namespace CompanyManagementSystem.Web.User_Interface
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Data= _employeeUserManager.GetAllEmpoyee();         
+            ICollection<EmployeeViewModel>model = _employeeUserManager.GetAllEmpoyee();
+            showGridView.DataSource = model;
+            showGridView.DataBind();
         }
     }
 }

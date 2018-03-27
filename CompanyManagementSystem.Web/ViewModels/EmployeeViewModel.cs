@@ -1,4 +1,4 @@
-﻿using CompanyManagementSystem.Web.Models;
+﻿using System;
 
 namespace CompanyManagementSystem.Web.ViewModels
 {
@@ -10,15 +10,17 @@ namespace CompanyManagementSystem.Web.ViewModels
         public string LastName { get; set; }
         public string EmployeeId { get; set; }
         public string Email { get; set; }
+        public int RoleId { get; set; }
+        public string Password { get; set; }
+        public string ConfirmPassword { get; set; }
         public string MobileNo { get; set; }
-        public string Section { get; set; }
-        public string Designation { get; set; }
+        public int SectionId { get; set; }
+        public int DesignationId { get; set; }
         public double BasicSalary { get; set; }
-        public string Gender { get; set; }
-        public string DateOfBirth { get; set; }
-        public string JoinDate { get; set; }
-        public string Address { get; set; }
-        public Branch Branch { get; set; }
+        public string Gander { get; set; }
+        public DateTime DateOfBirth { get; set; }
+        public DateTime JoinDate { get; set; }
         public int BranchId { get; set; }
+        public string Address { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using CompanyManagementSystem.Web.Data_Access_Layer;
 using CompanyManagementSystem.Web.Models;
-using System.Data;
+using CompanyManagementSystem.Web.ViewModels;
+using System.Collections.Generic;
 
 namespace CompanyManagementSystem.Web.Business_Logic_Layer
 {
@@ -18,7 +19,7 @@ namespace CompanyManagementSystem.Web.Business_Logic_Layer
             return _employeeUserGetWay.EmployeeExistsOrNot(username, password);
         }
 
-        public DataSet GetAllEmpoyee()
+        public ICollection<EmployeeViewModel> GetAllEmpoyee()
         {
             return _employeeUserGetWay.GetAllEmployee();
         }
@@ -26,6 +27,15 @@ namespace CompanyManagementSystem.Web.Business_Logic_Layer
         public Employee GetEmployeeById(int selectedItemValue)
         {
             return _employeeUserGetWay.GetEmployeeById(selectedItemValue);
+        }
+
+        public int AddEmployee(Employee employee)
+        {
+            if (string.IsNullOrEmpty(employee.EmployeeId))
+            {
+                employee.EmployeeId=_employeeUserGetWay.GetEmployeeId(employee.SectionId);
+            }
+           return _employeeUserGetWay.AddEmployee(employee);
         }
     }
 }

@@ -34,17 +34,18 @@ label {
     display: block;
     margin-bottom: 5px;
     color: black;
+    font-size: 15px;
+    padding-bottom: 7px;
     font-weight: bold;
 }
 .row-fluid .span6 {
     width: 38.717948717948715%;
     border-radius: 15px;
     height: 40px;
-}
+    }
 .row-fluid .span4 {
     width: 25.717948717948715%;
     border-radius: 20px;
-    height: 40px;
     width: 255px;
     }
 .row-fluid .textArea {
@@ -60,3 +61,11 @@ label {
 }
 
 
+/*radio Button css*/
+.radio{
+    color:black;
+    font-size:15px;
+    position:relative;
+}
+ 
+ 

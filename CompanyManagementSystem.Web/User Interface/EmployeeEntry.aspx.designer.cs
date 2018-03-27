@@ -58,6 +58,33 @@ namespace CompanyManagementSystem.Web.User_Interface {
         protected global::System.Web.UI.WebControls.TextBox emailTextBox;
         
         /// <summary>
+        /// roleDropDownBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList roleDropDownBox;
+        
+        /// <summary>
+        /// passwordTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox passwordTextBox;
+        
+        /// <summary>
+        /// confirmPasswordTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox confirmPasswordTextBox;
+        
+        /// <summary>
         /// mobileTextBox control.
         /// </summary>
         /// <remarks>
@@ -67,22 +94,22 @@ namespace CompanyManagementSystem.Web.User_Interface {
         protected global::System.Web.UI.WebControls.TextBox mobileTextBox;
         
         /// <summary>
-        /// sectionTextBox control.
+        /// sectionDropDownBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox sectionTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList sectionDropDownBox;
         
         /// <summary>
-        /// DesignationTextBox control.
+        /// designationDropDownBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox DesignationTextBox;
+        protected global::System.Web.UI.WebControls.DropDownList designationDropDownBox;
         
         /// <summary>
         /// salaryTextBox control.
@@ -94,13 +121,22 @@ namespace CompanyManagementSystem.Web.User_Interface {
         protected global::System.Web.UI.WebControls.TextBox salaryTextBox;
         
         /// <summary>
-        /// genderTextBox control.
+        /// maleRadioButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox genderTextBox;
+        protected global::System.Web.UI.WebControls.RadioButton maleRadioButton;
+        
+        /// <summary>
+        /// femaleRadioButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RadioButton femaleRadioButton;
         
         /// <summary>
         /// dateOfBirthTextBox control.
@@ -112,6 +148,15 @@ namespace CompanyManagementSystem.Web.User_Interface {
         protected global::System.Web.UI.WebControls.TextBox dateOfBirthTextBox;
         
         /// <summary>
+        /// dateOfBirthTextBox_CalendarExtender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CalendarExtender dateOfBirthTextBox_CalendarExtender;
+        
+        /// <summary>
         /// joinDateTextBox control.
         /// </summary>
         /// <remarks>
@@ -119,6 +164,24 @@ namespace CompanyManagementSystem.Web.User_Interface {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox joinDateTextBox;
+        
+        /// <summary>
+        /// joinDateTextBox_CalendarExtender control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::AjaxControlToolkit.CalendarExtender joinDateTextBox_CalendarExtender;
+        
+        /// <summary>
+        /// branchDropDownBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList branchDropDownBox;
         
         /// <summary>
         /// addressTextBox control.
@@ -137,5 +200,14 @@ namespace CompanyManagementSystem.Web.User_Interface {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnEmployeeSave;
+        
+        /// <summary>
+        /// ScriptManager1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
     }
 }
