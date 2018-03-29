@@ -29,30 +29,17 @@ textarea {
         padding: 0;
     }
 }*/
+.container-fluid {
+    padding-right: 0px;
+    padding-left: 0px;
+}
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    color: black;
-    font-size: 15px;
-    padding-bottom: 7px;
-    font-weight: bold;
-}
-.row-fluid .span6 {
-    width: 38.717948717948715%;
-    border-radius: 15px;
-    height: 40px;
-    }
-.row-fluid .span4 {
-    width: 25.717948717948715%;
+.tbox{   
+    width: 384px;
     border-radius: 20px;
-    width: 255px;
-    }
-.row-fluid .textArea {
-    width: 28.717948717948715%;
-    border-radius: 15px;
-    height: 66px;
+    height: 37px;
 }
+
 .save {
     width: 80px !important;
     height: 37px;
@@ -61,11 +48,43 @@ label {
 }
 
 
+
+
+
+
+
+
+
+
+
+/*label {
+    display: block;
+    margin-bottom: 5px;
+    color: black;
+    font-size: 15px;
+    padding-bottom: 7px;
+    font-weight: bold;
+}
+.row-fluid .span6 {
+    border-radius: 15px;
+    height: 35px;
+}
+.row-fluid .span4 {
+    width: 25.717948717948715%;
+    border-radius: 20px;
+    width: 255px;
+}
+.row-fluid .textArea {
+    width: 28.717948717948715%;
+    border-radius: 15px;
+    height: 66px;
+}
+
+
 /*radio Button css*/
-.radio{
-    color:black;
+/*.radio{
     font-size:15px;
     position:relative;
-}
+}*/
  
  

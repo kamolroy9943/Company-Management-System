@@ -184,5 +184,29 @@ namespace CompanyManagementSystem.Web.Data_Access_Layer
             _connection.Dispose();
             return returnData;
         }
+
+        public ICollection<Employee> GetEmployeeByUserName(string username)
+        {
+            ICollection<Employee> employees = new List<Employee>();
+            string query = "Select * From Employee where Email='" + username + "'";
+            SqlCommand command=new SqlCommand(query,_connection);
+            _connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    Employee employee = new Employee();
+                    employee.Id = int.Parse(reader["Id"].ToString());
+                    employee.FirstName = reader["FirstName"].ToString();
+                    employee.LastName = reader["LastName"].ToString();
+                    employee.Email = reader["Email"].ToString();
+                    employees.Add(employee);
+                }
+                reader.Close();
+            }
+            _connection.Close();
+            return employees;
+        }
     }
 }

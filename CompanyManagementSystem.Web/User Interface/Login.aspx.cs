@@ -15,7 +15,7 @@ namespace CompanyManagementSystem.Web.User_Interface
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["username"] != null && Session["username"] != string.Empty)
+            if (Session["username"] != null && Session["username"] != null)
             {
                 Response.Redirect("Default.aspx");
             }
@@ -32,6 +32,7 @@ namespace CompanyManagementSystem.Web.User_Interface
             var isExists = _employeeUserManager.EmployeeExistsOrNot(model.UserName, model.Password);
             if (isExists)
             {
+                Session["password"] = model.Password;
                 Session["username"] = model.UserName;
                 Response.Redirect("Default.aspx");
             }

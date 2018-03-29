@@ -25,31 +25,32 @@
                                 <div class="control-group">
                                     <label class="control-label">Employee Id :</label>
                                     <div class="controls">
-                                        <asp:TextBox ID="employeeIdTextBox" class="span6" runat="server"></asp:TextBox>
+                                        <asp:DropDownList ID="employeeDropDownBox" DataValueField="Id" DataTextField="Email" runat="server" style="height: 37px; width: 280px;border-radius:20px;"></asp:DropDownList>
+                               
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Date :</label>
                                     <div class="controls">
-                                        <asp:TextBox ID="dateTextBox" class="span6" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="dateTextBox" style="height: 37px; width: 280px;border-radius:20px;" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">In Time :</label>
                                     <div class="controls">
-                                        <asp:TextBox ID="inTimeTextBox" class="span6" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="inTimeTextBox" style="height: 37px; width: 280px;border-radius:20px;" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Out Time :</label>
                                     <div class="controls">
-                                        <asp:TextBox ID="outTimeTextBox" class="span6" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="outTimeTextBox" style="height: 37px; width: 280px;border-radius:20px;" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Half Day :</label>
                                     <div class="controls">
-                                        <asp:TextBox ID="halfDayTextBox" class="span6" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="halfDayTextBox" style="height: 37px; width: 280px;border-radius:20px;" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="form-actions">

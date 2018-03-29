@@ -13,6 +13,10 @@ namespace CompanyManagementSystem.Web.User_Interface
         private readonly DesignationManager _designationManager;
         private readonly EmployeeUserManager _employeeUserManager;
         private readonly BranchManager _branchManager;
+        
+
+
+        
 
         public EmployeeEntry()
         {
@@ -51,21 +55,22 @@ namespace CompanyManagementSystem.Web.User_Interface
 
         protected void btnEmployeeSave_Click(object sender, EventArgs e)
         {
+
+            if (fullNameTextBox.Text == String.Empty || firstNameTextBox.Text == string.Empty ||
+                lastNameTextBox.Text == string.Empty || emailTextBox.Text == string.Empty || int.Parse(roleDropDownBox.SelectedValue) <= 0 ||
+                passwordTextBox.Text == string.Empty || mobileTextBox.Text == string.Empty || int.Parse(sectionDropDownBox.SelectedValue) <= 0 ||
+                int.Parse(designationDropDownBox.SelectedItem.Value) <= 0 || double.Parse(salaryTextBox.Text) <= 0 ||
+                maleRadioButton.Text == string.Empty || DateTime.Parse(dateOfBirthTextBox.Text) == null || DateTime.Parse(joinDateTextBox.Text) == null ||
+                int.Parse(branchDropDownBox.SelectedValue) <= 0 || addressTextBox.Text == string.Empty)
+            {
+                message.Text = "Fill up All the input fields";
+                return;
+            }
+
             int rowAffected = 0;
            if (maleRadioButton.Checked)
             {
-                if(fullNameTextBox.Text==String.Empty || firstNameTextBox.Text==string.Empty||
-                    lastNameTextBox.Text==string.Empty || emailTextBox.Text==string.Empty ||int.Parse(roleDropDownBox.SelectedValue)<=0||
-                    passwordTextBox.Text==string.Empty || mobileTextBox.Text ==string.Empty || int.Parse(sectionDropDownBox.SelectedValue)<=0 ||
-                    int.Parse(designationDropDownBox.SelectedItem.Value)<=0 || double.Parse(salaryTextBox.Text)<=0 ||
-                    maleRadioButton.Text==string.Empty || DateTime.Parse(dateOfBirthTextBox.Text)==null || DateTime.Parse(joinDateTextBox.Text)==null ||
-                    int.Parse(branchDropDownBox.SelectedValue)<=0 || addressTextBox.Text==string.Empty)
-                {
-                    message.Text = "Fill up All the input fields";
-                    return;
-                }
-
-                Employee employee = new Employee(fullNameTextBox.Text, firstNameTextBox.Text,
+               Employee employee = new Employee(fullNameTextBox.Text, firstNameTextBox.Text,
                     lastNameTextBox.Text, emailTextBox.Text,
                     int.Parse(roleDropDownBox.SelectedValue), passwordTextBox.Text
                     ,mobileTextBox.Text, int.Parse(sectionDropDownBox.SelectedValue),
@@ -85,10 +90,15 @@ namespace CompanyManagementSystem.Web.User_Interface
                     int.Parse(branchDropDownBox.SelectedItem.Value), addressTextBox.Text);
                 rowAffected=_employeeUserManager.AddEmployee(employee);
             }
-            if (rowAffected==1)
+           
+            if (rowAffected == 1)
             {
                 message.Text = "Employee Save Successfull !";
                 Response.Redirect(Request.Url.AbsoluteUri);
+            }
+            else
+            {
+                message.Text = "Employee Insert Failed !";
             }
         }
     }

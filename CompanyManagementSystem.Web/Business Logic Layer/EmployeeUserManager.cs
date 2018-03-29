@@ -37,5 +37,10 @@ namespace CompanyManagementSystem.Web.Business_Logic_Layer
             }
            return _employeeUserGetWay.AddEmployee(employee);
         }
+
+        public ICollection<Employee> GetEmployeeByUserName(string username)
+        {
+            return _employeeUserGetWay.GetEmployeeByUserName(username);
+        }
     }
 }

@@ -47,6 +47,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Documents\ASP.NET AJAX Control Toolkit\Bin\AjaxControlToolkit.dll</HintPath>
     </Reference>
+    <Reference Include="DevExpress.Web.v17.2, Version=17.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -137,6 +138,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="CompanyLogo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\bootstrap-responsive.min.css" />
@@ -325,7 +327,6 @@
     <Content Include="User Interface\EmployeeEntry.aspx" />
     <Content Include="User Interface\EmployeeList.aspx" />
     <Content Include="User Interface\Login.aspx" />
-    <Content Include="User Interface\WebForm1.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -345,12 +346,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="Business Logic Layer\AdminManager.cs" />
     <Compile Include="Business Logic Layer\BranchManager.cs" />
+    <Compile Include="Business Logic Layer\CompanyManager.cs" />
     <Compile Include="Business Logic Layer\DesignationManager.cs" />
     <Compile Include="Business Logic Layer\EmployeeUserManager.cs" />
     <Compile Include="Business Logic Layer\RoleManager.cs" />
     <Compile Include="Business Logic Layer\SectionManager.cs" />
     <Compile Include="Data Access Layer\AdminGetWay.cs" />
     <Compile Include="Data Access Layer\BranchGetWay.cs" />
+    <Compile Include="Data Access Layer\CompanyGetWay.cs" />
     <Compile Include="Data Access Layer\DesignationGetWay.cs" />
     <Compile Include="Data Access Layer\EmployeeUserGetWay.cs" />
     <Compile Include="Data Access Layer\RoleGetWay.cs" />
@@ -440,13 +443,6 @@
     <Compile Include="User Interface\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
-    <Compile Include="User Interface\WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="User Interface\WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ViewModels\AdminViewModel.cs" />
     <Compile Include="ViewModels\Attendance.cs" />
     <Compile Include="ViewModels\BranchViewModel.cs" />
@@ -463,7 +459,9 @@
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
