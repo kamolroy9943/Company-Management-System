@@ -36,18 +36,17 @@ namespace CompanyManagementSystem.Web.User_Interface
         public void PopulateGridView()
         {
          
-            DataTable dataTable=new DataTable();
+            DataSet dataTable=new DataSet();
             string query = "Select * from Employee";
             _connection.Open();
             SqlDataAdapter adapter=new SqlDataAdapter(query,_connection);
             adapter.Fill(dataTable);
             _connection.Close();
-            employeeListGridView.DataSource = dataTable;
-            employeeListGridView.DataBind();
+            employeeListTable.DataSource = dataTable;
+            employeeListTable.DataBind();
             
 
         }
 
-       
-    }
+      }
 }

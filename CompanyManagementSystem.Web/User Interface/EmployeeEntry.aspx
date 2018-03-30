@@ -24,7 +24,7 @@
                         </div>
 
                         <div class="widget-content nopadding" style="margin-left: 50px; margin-top: 40px;">
-                            <% if (message.Text != string.Empty)
+                            <%--<% if (message.Text != string.Empty)
                                 { %>
                             <% if (message.Text == "Fill up All the input fields" || message.Text == "Employee Insert Failed !")
                                 { %>
@@ -44,9 +44,15 @@
                             <% 
                                 } %>
                             <% }
-                            %>
+                            %>--%>
+
+                            <div class="alert" style="height: 20px; width: 336px; border-radius: 20px;">
+                                <strong>
+                                    <asp:Label ID="message" runat="server" Text=""></asp:Label></strong>
+                            </div>
 
                             <form action="#" method="get" class="form-horizontal" style="padding: 40px 0">
+                                <asp:HiddenField ID="employeeIdHiddenField" runat="server" />
                                 <div class="control-group">
                                     <label class="control-label">Full Name :</label>
                                     <div class="controls">
@@ -66,7 +72,7 @@
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label">Email :</label>
+                                    <label class="control-label" runat="server" ID="emailLabel">Email :</label>
                                     <div class="controls">
                                         <asp:TextBox ID="emailTextBox" runat="server" Style="height: 30px; width: 374px; border-radius: 20px;"></asp:TextBox>
                                     </div>
@@ -78,13 +84,13 @@
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label">Password :</label>
+                                    <label class="control-label" ID="passwordLabel" runat="server">Password :</label>
                                     <div class="controls">
                                         <asp:TextBox ID="passwordTextBox" runat="server" Style="height: 30px; width: 374px; border-radius: 20px;"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label">Confirm Password :</label>
+                                    <label class="control-label" ID="confirmPasswordLabel" runat="server">Confirm Password :</label>
                                     <div class="controls">
                                         <asp:TextBox ID="confirmPasswordTextBox" runat="server" Style="height: 30px; width: 374px; border-radius: 20px;"></asp:TextBox>
                                     </div>
@@ -154,6 +160,7 @@
                                 <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
                             </form>
                         </div>
+
                     </div>
                 </div>
             </div>

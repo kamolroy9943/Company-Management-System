@@ -324,6 +324,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="User Interface\EmployeeAttendance.aspx" />
+    <Content Include="User Interface\EmployeeDetails.aspx" />
     <Content Include="User Interface\EmployeeEntry.aspx" />
     <Content Include="User Interface\EmployeeList.aspx" />
     <Content Include="User Interface\Login.aspx" />
@@ -421,6 +422,13 @@
     </Compile>
     <Compile Include="User Interface\EmployeeAttendance.aspx.designer.cs">
       <DependentUpon>EmployeeAttendance.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\EmployeeDetails.aspx.cs">
+      <DependentUpon>EmployeeDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User Interface\EmployeeDetails.aspx.designer.cs">
+      <DependentUpon>EmployeeDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="User Interface\EmployeeEntry.aspx.cs">
       <DependentUpon>EmployeeEntry.aspx</DependentUpon>

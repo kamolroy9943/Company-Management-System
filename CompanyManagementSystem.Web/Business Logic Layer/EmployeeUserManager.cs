@@ -42,5 +42,20 @@ namespace CompanyManagementSystem.Web.Business_Logic_Layer
         {
             return _employeeUserGetWay.GetEmployeeByUserName(username);
         }
+
+        public int UpdateEmployee(Employee employee)
+        {
+            return _employeeUserGetWay.UpdateEmployee(employee);
+        }
+
+        public int AddEmployeeAttendance(Attendance attendance)
+        {
+            return _employeeUserGetWay.AddEmployeeAttendance(attendance);
+        }
+
+        public bool IsAttendanceExists(int employeeId, string date)
+        {
+            return _employeeUserGetWay.IsAttendanceExists(employeeId, date);
+        }
     }
 }

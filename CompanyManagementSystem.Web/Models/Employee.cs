@@ -4,9 +4,12 @@ namespace CompanyManagementSystem.Web.Models
 {
     public class Employee
     {
-        public Employee(string fullName,string firstName,string lastName,string email,int roleId,string password,
-                        string mobileNo,int sectionId,int designationId,double basicSalary,string gander,DateTime dateOfBirth,
-                        DateTime joinDate,int branchId,string address)
+
+
+        public Employee(string fullName, string firstName, string lastName, string email,
+            int roleId, string password, string mobileNo, int sectionId, int designationId,
+            double basicSalary, string gander, DateTime dateOfBirth, DateTime joinDate,
+            int branchId, string address)
         {
             this.FullName = fullName;
             this.FirstName = firstName;
@@ -25,10 +28,33 @@ namespace CompanyManagementSystem.Web.Models
             this.Address = address;
         }
 
+        public Employee(int id,string fullName, string firstName, string lastName,
+            int roleId, string mobileNo,
+            int sectionId, int designationId, double basicSalary, string gander,
+            DateTime dateOfBirth, DateTime joinDate, int branchId, string address)
+        {
+            Id = id;
+            FullName = fullName;
+            FirstName = firstName;
+            LastName = lastName;
+            RoleId = roleId;
+            MobileNo = mobileNo;
+            SectionId = sectionId;
+            DesignationId = designationId;
+            BasicSalary = basicSalary;
+            Gander = gander;
+            DateOfBirth = dateOfBirth;
+            JoinDate = joinDate;
+            BranchId = branchId;
+            Address = address;
+        }
+
         public Employee()
         {
-           
+
         }
+
+
 
         public int Id { get; set; }
         public string FullName { get; set; }

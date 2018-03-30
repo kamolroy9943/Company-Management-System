@@ -9,6 +9,7 @@ namespace CompanyManagementSystem.Web.ViewModels
         public DateTime OutTime { get; set; }
         public int LateHour { get; set; }
         public string Notes { get; set; }
-
+        public string Date { get; set; }
+        public string HalfDay { get; set; }
     }
 }

@@ -40,26 +40,26 @@
                             </asp:GridView>
 
                             <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:CompnayDbConnectionString %>" SelectCommand="SELECT [Id], [FirstName], [LastName], [EmployeeId], [Email], [Mobile], [DesignationId] FROM [Employee]"></asp:SqlDataSource>--%>
-                            <%--  <asp:Repeater id="rptRoles" runat="server">
+                               <asp:Repeater id="employeeListTable" runat="server">
                                 <HeaderTemplate>
                                     <table class="table table-bordered data-table">
                                     <tr>
                                         <td>Role ID</td>
                                         <td>Title</td>
-                                         
+                                        <td></td>
                                     </tr>
                                 </HeaderTemplate>
                                 <ItemTemplate>
                                     <tr>
                                         <td><%#Eval("FullName")%></td>
                                         <td><%#Eval("FirstName")%></td>
+                                        <td><asp:LinkButton ID ="lnkBtnOk" runat ="server" PostBackUrl='<%# string.Format("EmployeeEntry.aspx?Id={0}", Eval("ID"))%>' Text="Edit"></asp:LinkButton></td>
                                     </tr>
                                 </ItemTemplate>
                                 <FooterTemplate>
                                     </table>
                                 </FooterTemplate>
                             </asp:Repeater> 
-                            --%>
                             <%--  <table>
                                 <tr>
                                     <td style="width: 100%">
@@ -91,7 +91,7 @@
                                     </td>
                                 </tr>
                             </table>--%>
-                            <div style="overflow: scroll">
+                            <%--   <div style="overflow: scroll">
                                
                                 <asp:GridView ID="employeeListGridView" runat="server"
                                     BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" AutoGenerateColumns="False" AllowPaging="True" PageSize="1">
@@ -277,7 +277,7 @@
                                     </Columns>
 
                                 </asp:GridView>
-                            </div>
+                            </div>--%>
                         </div>
                     </div>
                 </div>

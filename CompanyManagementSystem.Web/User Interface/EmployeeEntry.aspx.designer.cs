@@ -22,13 +22,13 @@ namespace CompanyManagementSystem.Web.User_Interface {
         protected global::System.Web.UI.WebControls.Label message;
         
         /// <summary>
-        /// Label1 control.
+        /// employeeIdHiddenField control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.HiddenField employeeIdHiddenField;
         
         /// <summary>
         /// fullNameTextBox control.
@@ -58,6 +58,15 @@ namespace CompanyManagementSystem.Web.User_Interface {
         protected global::System.Web.UI.WebControls.TextBox lastNameTextBox;
         
         /// <summary>
+        /// emailLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl emailLabel;
+        
+        /// <summary>
         /// emailTextBox control.
         /// </summary>
         /// <remarks>
@@ -76,6 +85,15 @@ namespace CompanyManagementSystem.Web.User_Interface {
         protected global::System.Web.UI.WebControls.DropDownList roleDropDownBox;
         
         /// <summary>
+        /// passwordLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl passwordLabel;
+        
+        /// <summary>
         /// passwordTextBox control.
         /// </summary>
         /// <remarks>
@@ -83,6 +101,15 @@ namespace CompanyManagementSystem.Web.User_Interface {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox passwordTextBox;
+        
+        /// <summary>
+        /// confirmPasswordLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl confirmPasswordLabel;
         
         /// <summary>
         /// confirmPasswordTextBox control.

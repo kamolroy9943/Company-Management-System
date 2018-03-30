@@ -15,10 +15,10 @@ namespace CompanyManagementSystem.Web.User_Interface
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["username"] != null && Session["username"] != null)
-            {
-                Response.Redirect("Default.aspx");
-            }
+            //if (Session["username"] != null && Session["username"] != null)
+            //{
+            //    Response.Redirect("Default.aspx");
+            //}
         }
 
         protected void loginButton_Click(object sender, EventArgs e)

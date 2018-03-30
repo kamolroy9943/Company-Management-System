@@ -1,5 +1,6 @@
 ﻿using CompanyManagementSystem.Web.Models;
 using CompanyManagementSystem.Web.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -85,9 +86,22 @@ namespace CompanyManagementSystem.Web.Data_Access_Layer
                 while (reader.Read())
                 {
                     employee = new Employee();
+                    employee.Id = int.Parse(reader["Id"].ToString());
+                    employee.FullName = reader["FullName"].ToString();
                     employee.FirstName = reader["FirstName"].ToString();
                     employee.LastName = reader["LastName"].ToString();
                     employee.Email = reader["Email"].ToString();
+                    employee.MobileNo = reader["Mobile"].ToString();
+                    employee.SectionId = int.Parse(reader["SectionId"].ToString());
+                    employee.DesignationId = int.Parse(reader["DesignationId"].ToString());
+                    employee.BasicSalary = double.Parse(reader["BasicSalary"].ToString());
+                    employee.Gander = reader["Gender"].ToString();
+                    employee.DateOfBirth = DateTime.Parse(reader["DateOfBirth"].ToString());
+                    employee.JoinDate = DateTime.Parse(reader["JoinDate"].ToString());
+                    employee.BranchId = int.Parse(reader["BranchId"].ToString());
+                    employee.Address = reader["Address"].ToString();
+
+                    employee.RoleId = int.Parse(reader["RoleId"].ToString());
                 }
                 reader.Close();
             }
@@ -189,7 +203,7 @@ namespace CompanyManagementSystem.Web.Data_Access_Layer
         {
             ICollection<Employee> employees = new List<Employee>();
             string query = "Select * From Employee where Email='" + username + "'";
-            SqlCommand command=new SqlCommand(query,_connection);
+            SqlCommand command = new SqlCommand(query, _connection);
             _connection.Open();
             SqlDataReader reader = command.ExecuteReader();
             if (reader.HasRows)
@@ -207,6 +221,61 @@ namespace CompanyManagementSystem.Web.Data_Access_Layer
             }
             _connection.Close();
             return employees;
+        }
+
+        public int UpdateEmployee(Employee employee)
+        {
+            string query = "UPDATE Employee SET FullName = '" + employee.FullName + "', FirstName = '" +
+                           employee.FirstName + "', LastName = '" + employee.LastName + "', RoleId = '" +
+                           employee.RoleId + "',Mobile = '" + employee.MobileNo + "', SectionId = '" +
+                           employee.SectionId + "', DesignationId = '" + employee.DesignationId + "', BasicSalary = '" +
+                           employee.BasicSalary + "', Gender = '" + employee.Gander + "', DateOfBirth = '" +
+                           employee.DateOfBirth + "', JoinDate = '" + employee.JoinDate + "', BranchId = '" +
+                           employee.BranchId + "', Address = '" + employee.Address + "' WHERE Id='" + employee.Id + "'";
+            SqlCommand command = new SqlCommand(query, _connection);
+            _connection.Open();
+            int rowAffected = command.ExecuteNonQuery();
+            _connection.Close();
+            return rowAffected;
+        }
+
+        public int AddEmployeeAttendance(Attendance attendance)
+        {
+            string query =
+                "Insert into EmployeeAttendance(EmployeeId,Date,Intime,Outtime,LateHour,HalfDay,Notes) values('" +
+                attendance.EmployeeId + "','" + attendance.Date + "','" + attendance.InTime + "','" +
+                attendance.OutTime + "','" + attendance.LateHour + "','" + attendance.HalfDay + "','" +
+                attendance.Notes + "')";
+            SqlCommand command = new SqlCommand(query, _connection);
+            _connection.Open();
+            int rowAffedted = command.ExecuteNonQuery();
+            _connection.Close();
+            return rowAffedted;
+        }
+
+        public bool IsAttendanceExists(int employeeId, string date)
+        {
+            Attendance attendance = null;
+            string query = "Select * from EmployeeAttendance where EmployeeId='" + employeeId + "' And Date='" + date + "'";
+            SqlCommand command = new SqlCommand(query, _connection);
+            _connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    attendance = new Attendance();
+                    attendance.InTime = DateTime.Parse(reader["Intime"].ToString());
+                    attendance.Notes = reader["Notes"].ToString();
+                }
+                reader.Close();
+            }
+            _connection.Close();
+            if (attendance == null) { return false; }
+            else
+            {
+                return true;
+            }
         }
     }
 }
