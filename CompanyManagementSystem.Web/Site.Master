@@ -21,7 +21,7 @@
     <form id="form1" runat="server">
         <div>
             <div id="header">
-                <h1><a href="dashboard.html">Matrix Admin</a></h1>
+                <h1><a href="dashboard.html">Company Management</a></h1>
             </div>
             <!--close-Header-part-->
 
@@ -66,7 +66,7 @@
                 <ul>
                     <li class="active"><a href="#"><i class="icon icon-home"></i><span>Dashboard</span></a> </li>
                     <li><a href="charts.html"><i class="icon icon-signal"></i><span>Charts &amp; graphs</span></a> </li>
-                    <li><a href="widgets.html"><i class="icon icon-inbox"></i><span>Widgets</span></a> </li>
+                    <li><a href="CalanderPage.aspx"><i class="icon icon-inbox"></i><span>Calender</span></a> </li>
                     <li><a href="EmployeeList.aspx"><i class="icon icon-th"></i><span>Employee List</span></a></li>
                     <li><a href="grid.html"><i class="icon icon-fullscreen"></i><span>Full width</span></a></li>
                     <li class="submenu"><a href="#"><i class="icon icon-th-list"></i><span>Employee</span> <span class="label label-important">3</span></a>

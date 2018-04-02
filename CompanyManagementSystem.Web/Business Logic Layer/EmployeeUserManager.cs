@@ -1,7 +1,9 @@
 ﻿using CompanyManagementSystem.Web.Data_Access_Layer;
 using CompanyManagementSystem.Web.Models;
 using CompanyManagementSystem.Web.ViewModels;
+using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace CompanyManagementSystem.Web.Business_Logic_Layer
 {
@@ -53,9 +55,19 @@ namespace CompanyManagementSystem.Web.Business_Logic_Layer
             return _employeeUserGetWay.AddEmployeeAttendance(attendance);
         }
 
-        public bool IsAttendanceExists(int employeeId, string date)
+        public bool IsAttendanceExists(int employeeId, DateTime date)
         {
             return _employeeUserGetWay.IsAttendanceExists(employeeId, date);
+        }
+
+        public ICollection<Employee> GetEmployeeBySectionId(int sectionId)
+        {
+            return _employeeUserGetWay.GetEmployeeBySectionId(sectionId);
+        }
+
+        public DataSet GetEmployeeAttendances(EmployeeAttendanceViewModel model)
+        {
+            return _employeeUserGetWay.GetEmployeeAttendances(model);
         }
     }
 }

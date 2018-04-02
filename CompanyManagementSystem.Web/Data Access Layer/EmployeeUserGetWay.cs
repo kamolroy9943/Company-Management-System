@@ -242,10 +242,10 @@ namespace CompanyManagementSystem.Web.Data_Access_Layer
         public int AddEmployeeAttendance(Attendance attendance)
         {
             string query =
-                "Insert into EmployeeAttendance(EmployeeId,Date,Intime,Outtime,LateHour,HalfDay,Notes) values('" +
+                "Insert into EmployeeAttendance(EmployeeId,Date,Intime,Outtime,LateHour,HalfDay,Notes,IsPresent) values('" +
                 attendance.EmployeeId + "','" + attendance.Date + "','" + attendance.InTime + "','" +
                 attendance.OutTime + "','" + attendance.LateHour + "','" + attendance.HalfDay + "','" +
-                attendance.Notes + "')";
+                attendance.Notes + "','"+attendance.IsPresent+"')";
             SqlCommand command = new SqlCommand(query, _connection);
             _connection.Open();
             int rowAffedted = command.ExecuteNonQuery();
@@ -253,7 +253,7 @@ namespace CompanyManagementSystem.Web.Data_Access_Layer
             return rowAffedted;
         }
 
-        public bool IsAttendanceExists(int employeeId, string date)
+        public bool IsAttendanceExists(int employeeId, DateTime date)
         {
             Attendance attendance = null;
             string query = "Select * from EmployeeAttendance where EmployeeId='" + employeeId + "' And Date='" + date + "'";
@@ -276,6 +276,41 @@ namespace CompanyManagementSystem.Web.Data_Access_Layer
             {
                 return true;
             }
+        }
+
+        public ICollection<Employee> GetEmployeeBySectionId(int sectionId)
+        {
+            ICollection<Employee> employees = new List<Employee>();
+            string query = "Select * From Employee where SectionId='" + sectionId + "'";
+            SqlCommand command = new SqlCommand(query, _connection);
+            _connection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    Employee employee = new Employee();
+                    employee.Id = int.Parse(reader["Id"].ToString());
+                    employee.EmployeeId = reader["EmployeeId"].ToString();
+                    //employee.FirstName = reader["FirstName"].ToString();
+                    //employee.LastName = reader["LastName"].ToString();
+                    //employee.Email = reader["Email"].ToString();
+                    employees.Add(employee);
+                }
+                reader.Close();
+            }
+            _connection.Close();
+            return employees;
+        }
+
+        public DataSet GetEmployeeAttendances(EmployeeAttendanceViewModel model)
+        {
+            DataSet data = new DataSet();
+            string query = "Select * From EmployeeAttendance where Date between '"+model.FromDate+"' and  '"+model.ToDate+"' and EmployeeId='"+model.EmployeeId+"'";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, _connection);
+            _connection.Open();
+            adapter.Fill(data);
+            return data;
         }
     }
 }

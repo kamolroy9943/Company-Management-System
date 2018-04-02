@@ -33,7 +33,7 @@
                                 <div class="control-group">
                                     <label class="control-label">Date :</label>
                                     <div class="controls">
-                                        <asp:TextBox ID="dateTextBox" style="height: 28px; width: 273px;border-radius:20px;" runat="server" ReadOnly="true"></asp:TextBox>
+                                        <asp:TextBox ID="dateTextBox" Format="dd/MM/yyyy" style="height: 28px; width: 273px;border-radius:20px;" runat="server" ReadOnly="true"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="control-group">

@@ -45,13 +45,13 @@ namespace CompanyManagementSystem.Web.User_Interface
 
             Attendance attendance = new Attendance();
             attendance.EmployeeId = int.Parse(employeeDropDownBox.SelectedValue);
-            attendance.Date = dateTextBox.Text;
+            attendance.Date = DateTime.Parse(dateTextBox.Text);
             attendance.InTime = DateTime.Parse(inTimeTextBox.Text);
             attendance.OutTime = DateTime.Parse(outTimeTextBox.Text);
             attendance.LateHour = attendance.InTime.Hour - 10 > 0 ? attendance.InTime.Hour - 10 : 0;
             attendance.HalfDay = halfDayDropDownList.SelectedValue;
             attendance.Notes = attendance.LateHour > 0 ? "You are late today" : "You have come in time";
-
+            attendance.IsPresent = attendance.InTime != null && attendance.OutTime != null ? "Present" : "Absent";
 
             bool isExists = _employeeUserManager.IsAttendanceExists(attendance.EmployeeId, attendance.Date);
             if (isExists)
