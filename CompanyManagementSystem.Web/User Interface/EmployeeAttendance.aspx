@@ -19,39 +19,39 @@
                         </div>
 
                         <div class="widget-content nopadding" style="margin-left: 50px; margin-top: 40px;">
-                            <div class="alert alert-success" style="height: 20px; width: 238px; border-radius: 20px;">
-                                <strong><asp:Label ID="message" runat="server" Text=""></asp:Label></strong>  
+                            <div class="alert alert-success" style="height: 20px; width: 238px; border-radius: 2px; font-size:14px;">
+                               <asp:Label ID="message" runat="server" Text=""></asp:Label> 
                             </div>
                             <form action="#" method="get" class="form-horizontal" style="padding: 40px 0px">
                                 <div class="control-group">
                                     <label class="control-label">Employee Id :</label>
                                     <div class="controls">
-                                        <asp:DropDownList ID="employeeDropDownBox" DataValueField="Id" DataTextField="Email" runat="server" ReadOnly="true" style="height: 37px; width: 280px;border-radius:20px;"></asp:DropDownList>
+                                        <asp:DropDownList ID="employeeDropDownBox" DataValueField="Id" DataTextField="Email" runat="server" ReadOnly="true" style="height: 37px; width: 280px;border-radius:2px;"></asp:DropDownList>
                                
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Date :</label>
                                     <div class="controls">
-                                        <asp:TextBox ID="dateTextBox" Format="dd/MM/yyyy" style="height: 28px; width: 273px;border-radius:20px;" runat="server" ReadOnly="true"></asp:TextBox>
+                                        <asp:TextBox ID="dateTextBox" Format="dd/MM/yyyy" style="height: 28px; width: 273px;border-radius:2px;" runat="server" ReadOnly="true"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">In Time :</label>
                                     <div class="controls">
-                                        <asp:TextBox ID="inTimeTextBox" style="height: 28px; width: 273px;border-radius:20px;" runat="server" ReadOnly="true"></asp:TextBox>
+                                        <asp:TextBox ID="inTimeTextBox" style="height: 28px; width: 273px;border-radius:2px;" runat="server" ReadOnly="true"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Out Time :</label>
                                     <div class="controls">
-                                        <asp:TextBox ID="outTimeTextBox" style="height: 28px; width: 273px;border-radius:20px;" runat="server"></asp:TextBox>
+                                        <asp:TextBox ID="outTimeTextBox" style="height: 28px; width: 273px;border-radius:2px;" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Half Day :</label>
                                     <div class="controls">
-                                        <asp:DropDownList ID="halfDayDropDownList" style="height: 38px; width: 292px;border-radius:20px;" runat="server">
+                                        <asp:DropDownList ID="halfDayDropDownList" style="height: 38px; width: 292px;border-radius:2px;" runat="server">
                                             <asp:ListItem>Yes</asp:ListItem>
                                             <asp:ListItem>No</asp:ListItem>
                                         </asp:DropDownList>

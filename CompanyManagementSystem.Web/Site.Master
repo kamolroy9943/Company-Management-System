@@ -25,6 +25,12 @@
             </div>
             <!--close-Header-part-->
 
+            <!--start-top-serch-->
+            <div id="search" class="navbar navbar">
+                <input type="text" placeholder="Search here..." />
+                <button type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
+            </div>
+            <!--close-top-serch-->
 
             <!--top-Header-menu-->
             <div id="user-nav" class="navbar navbar-inverse">
@@ -34,60 +40,57 @@
                         <ul class="dropdown-menu">
                             <li><a href="#"><i class="icon-user"></i>My Profile</a></li>
                             <li class="divider"></li>
-                            <li><a href="#"><i class="icon-check"></i>My Tasks</a></li>
-                            <li class="divider"></li>
+                            <%--<li><a href="#"><i class="icon-check"></i>My Tasks</a></li>
+                            <li class="divider"></li>--%>
                             <li><a href="Login.aspx"><i class="icon-key"></i>Log Out</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown" id="menu-messages"><a href="#" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="icon icon-envelope"></i><span class="text">Messages</span> <span class="label label-important">5</span> <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a class="sAdd" title="" href="#"><i class="icon-plus"></i>new message</a></li>
+
+                   <%--<li class="dropdown" id="menu-messages"><a href="#" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="icon icon-envelope"></i><span class="text">Messages</span> <span class="label label-important">5</span> <b class="caret"></b></a>--%>
+                       <%-- <ul class="dropdown-menu">
+                            <li><a class="sAdd" title="" href="#"><i class="icon-plus"></i>New message</a></li>
                             <li class="divider"></li>
-                            <li><a class="sInbox" title="" href="#"><i class="icon-envelope"></i>inbox</a></li>
+                            <li><a class="sInbox" title="" href="#"><i class="icon-envelope"></i>Inbox</a></li>
                             <li class="divider"></li>
-                            <li><a class="sOutbox" title="" href="#"><i class="icon-arrow-up"></i>outbox</a></li>
+                            <li><a class="sOutbox" title="" href="#"><i class="icon-arrow-up"></i>Outbox</a></li>
                             <li class="divider"></li>
                             <li><a class="sTrash" title="" href="#"><i class="icon-trash"></i>trash</a></li>
-                        </ul>
-                    </li>
-                    <li class=""><a title="" href="#"><i class="icon icon-cog"></i><span class="text">Settings</span></a></li>
+                        </ul>--%>
+                    <%--</li>--%>
+                    <%--<li class=""><a title="" href="#"><i class="icon icon-cog"></i><span class="text">Settings</span></a></li>--%>
                     <li class=""><a title="" href="Login.aspx"><i class="icon icon-share-alt"></i><span class="text">Logout</span></a></li>
                 </ul>
             </div>
             <!--close-top-Header-menu-->
-            <!--start-top-serch-->
-            <div id="search">
-                <input type="text" placeholder="Search here..." />
-                <button type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
-            </div>
-
+            
             <div id="sidebar">
                 <a href="Default.aspx" class="visible-phone"><i class="icon icon-home"></i>Dashboard</a>
                 <ul>
-                    <li class="active"><a href="#"><i class="icon icon-home"></i><span>Dashboard</span></a> </li>
-                    <li><a href="charts.html"><i class="icon icon-signal"></i><span>Charts &amp; graphs</span></a> </li>
-                    <li><a href="CalanderPage.aspx"><i class="icon icon-inbox"></i><span>Calender</span></a> </li>
-                    <li><a href="EmployeeList.aspx"><i class="icon icon-th"></i><span>Employee List</span></a></li>
-                    <li><a href="grid.html"><i class="icon icon-fullscreen"></i><span>Full width</span></a></li>
+                    <li class="active"><a href="Default.aspx"><i class="icon icon-home"></i><span>Dashboard</span></a> </li>
+                    <%--<li><a href="charts.html"><i class="icon icon-signal"></i><span>Charts &amp; graphs</span></a> </li>--%>
+                    <%--<li><a href="CalanderPage.aspx"><i class="icon icon-inbox"></i><span>Event</span></a> </li>--%>                   
+                    <%--<a href="grid.html"><i class="icon icon-fullscreen"></i><span>Full width</span></a></li>--%>
                     <li class="submenu"><a href="#"><i class="icon icon-th-list"></i><span>Employee</span> <span class="label label-important">3</span></a>
                         <ul>
-                            <li><a href="EmployeeEntry.aspx">Add New Employee</a></li>
-                            <li><a href="EmployeeList">Employee List</a></li>
+                            <li><a href="EmployeeEntry.aspx">Add Employee</a></li>
+                            <li><a href="EmployeeList.aspx">Employee List</a></li>
                             <%--<li><a href="form-wizard.html">Form with Wizard</a></li>--%>
                         </ul>
                     </li>
-                    <li><a href="buttons.html"><i class="icon icon-tint"></i><span>Buttons &amp; icons</span></a></li>
-                    <li><a href="interface.html"><i class="icon icon-pencil"></i><span>Eelements</span></a></li>
-                    <li class="submenu"><a href="#"><i class="icon icon-file"></i><span>Addons</span> <span class="label label-important">5</span></a>
+                    <li><a href="EmployeeAttendance.aspx"><i class="icon icon-th"></i><span>Attendance</span></a></li>
+                    <%--<li><a href="buttons.html"><i class="icon icon-tint"></i><span>Buttons &amp; icons</span></a></li>--%>
+                    <%--<li><a href="interface.html"><i class="icon icon-pencil"></i><span>Eelements</span></a></li>--%>
+                    <li class="submenu"><a href="#"><i class="icon icon-file"></i><span>Administrator</span> <span class="label label-important">5</span></a>
                         <ul>
-                            <li><a href="index2.html">Dashboard2</a></li>
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li><a href="calendar.html">Calendar</a></li>
-                            <li><a href="invoice.html">Invoice</a></li>
-                            <li><a href="chat.html">Chat option</a></li>
+                            <%--<li><a href="index2.html">Dashboard2</a></li>--%>
+                            <%--<li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="calendar.html">Calendar</a></li>--%>
+                            <li><a href="AttendanceList.aspx">Attendance List</a></li>
+                            <li><a href="Invoice.aspx">Accounts</a></li>
+                            <%--<li><a href="chat.html">Chat option</a></li>--%>
                         </ul>
                     </li>
-                    <li class="submenu"><a href="#"><i class="icon icon-info-sign"></i><span>Error</span> <span class="label label-important">4</span></a>
+                    <%--<li class="submenu"><a href="#"><i class="icon icon-info-sign"></i><span>Error</span> <span class="label label-important">4</span></a>
                         <ul>
                             <li><a href="error403.html">Error 403</a></li>
                             <li><a href="error404.html">Error 404</a></li>
@@ -108,7 +111,7 @@
                         </div>
                         <span class="percent">87%</span>
                         <div class="stat">604.44 / 4000 MB</div>
-                    </li>
+                    </li>--%>
                 </ul>
             </div>
 
@@ -120,7 +123,7 @@
 
             <div class="row-fluid">
                 <div id="footer" class="span12">
-                    2013 &copy; Matrix Admin. Brought to you by <a href="http://themedesigner.in">Themedesigner.in</a>
+                    2018 &copy; Admin <a href="#">Kamol, Deb, Asraf, Maria</a>
                 </div>
             </div>
         </div>
