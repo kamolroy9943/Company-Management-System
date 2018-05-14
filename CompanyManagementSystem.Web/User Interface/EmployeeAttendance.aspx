@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EmployeeAttendance.aspx.cs" Inherits="CompanyManagementSystem.Web.User_Interface.EmployeeAttendance" EnableEventValidation="false" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="EmployeeAttendance.aspx.cs" Async="true" Inherits="CompanyManagementSystem.Web.User_Interface.EmployeeAttendance" EnableEventValidation="false" %>
 <%@ Register assembly="AjaxControlToolkit" namespace="AjaxControlToolkit" tagprefix="ajaxToolkit" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeaderContentPlaceHolder" runat="server">
 </asp:Content>
@@ -24,22 +24,27 @@
                             </div>
                             <form action="#" method="get" class="form-horizontal" style="padding: 40px 0px">
                                 <div class="control-group">
+                                    <label class="control-label">Department:</label>
+                                    <div class="controls">
+                                        <asp:DropDownList ID="departmentDropDownBox" AutoPostBack="True" DataValueField = "Id" DataTextField = "SectionName" runat="server"  style="height: 37px; width: 280px;border-radius:2px;" OnSelectedIndexChanged="departmentDropDownBox_SelectedIndexChanged"></asp:DropDownList>
+                               </div>
+                                </div>
+                                <div class="control-group">
                                     <label class="control-label">Employee Id :</label>
                                     <div class="controls">
-                                        <asp:DropDownList ID="employeeDropDownBox" DataValueField="Id" DataTextField="Email" runat="server" ReadOnly="true" style="height: 37px; width: 280px;border-radius:2px;"></asp:DropDownList>
-                               
+                                        <asp:DropDownList ID="employeeDropDownBox" DataValueField = "Id" DataTextField = "Email" runat="server" style="height: 37px; width: 280px;border-radius:2px;" OnSelectedIndexChanged="employeeDropDownBox_SelectedIndexChanged"></asp:DropDownList>
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">Date :</label>
                                     <div class="controls">
-                                        <asp:TextBox ID="dateTextBox" Format="dd/MM/yyyy" style="height: 28px; width: 273px;border-radius:2px;" runat="server" ReadOnly="true"></asp:TextBox>
+                                        <asp:TextBox ID="dateTextBox" Format="dd/MM/yyyy" style="height: 28px; width: 273px;border-radius:2px;" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label">In Time :</label>
                                     <div class="controls">
-                                        <asp:TextBox ID="inTimeTextBox" style="height: 28px; width: 273px;border-radius:2px;" runat="server" ReadOnly="true"></asp:TextBox>
+                                        <asp:TextBox ID="inTimeTextBox" style="height: 28px; width: 273px;border-radius:2px;" runat="server"></asp:TextBox>
                                     </div>
                                 </div>
                                 <div class="control-group">

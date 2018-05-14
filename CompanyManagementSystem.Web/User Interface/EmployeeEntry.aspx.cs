@@ -200,6 +200,7 @@ namespace CompanyManagementSystem.Web.User_Interface
                     message.Font.Size = 20;
                 }
             }
+            Response.Redirect("EmployeeList.aspx");
         }
     }
 }

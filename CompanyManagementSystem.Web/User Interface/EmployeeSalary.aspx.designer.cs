@@ -10,78 +10,78 @@
 namespace CompanyManagementSystem.Web.User_Interface {
     
     
-    public partial class EmployeeAttendance {
+    public partial class EmployeeSalary {
         
         /// <summary>
-        /// message control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label message;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// departmentDropDownBox control.
+        /// nameLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList departmentDropDownBox;
+        protected global::System.Web.UI.WebControls.Label nameLabel;
         
         /// <summary>
-        /// employeeDropDownBox control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList employeeDropDownBox;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// dateTextBox control.
+        /// employeeCodelabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox dateTextBox;
+        protected global::System.Web.UI.WebControls.Label employeeCodelabel;
         
         /// <summary>
-        /// inTimeTextBox control.
+        /// Label3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox inTimeTextBox;
+        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// outTimeTextBox control.
+        /// workingDayLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox outTimeTextBox;
+        protected global::System.Web.UI.WebControls.Label workingDayLabel;
         
         /// <summary>
-        /// halfDayDropDownList control.
+        /// Label4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList halfDayDropDownList;
+        protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// btnAttendanceSave control.
+        /// salaryLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAttendanceSave;
+        protected global::System.Web.UI.WebControls.Label salaryLabel;
     }
 }

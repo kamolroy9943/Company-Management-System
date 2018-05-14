@@ -331,6 +331,7 @@
     <Content Include="User Interface\EmployeeDetails.aspx" />
     <Content Include="User Interface\EmployeeEntry.aspx" />
     <Content Include="User Interface\EmployeeList.aspx" />
+    <Content Include="User Interface\EmployeeSalary.aspx" />
     <Content Include="User Interface\Invoice.aspx" />
     <Content Include="User Interface\Login.aspx" />
     <Content Include="User Interface\MenualAttendance.aspx" />
@@ -465,6 +466,13 @@
     </Compile>
     <Compile Include="User Interface\EmployeeList.aspx.designer.cs">
       <DependentUpon>EmployeeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\EmployeeSalary.aspx.cs">
+      <DependentUpon>EmployeeSalary.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User Interface\EmployeeSalary.aspx.designer.cs">
+      <DependentUpon>EmployeeSalary.aspx</DependentUpon>
     </Compile>
     <Compile Include="User Interface\Invoice.aspx.cs">
       <DependentUpon>Invoice.aspx</DependentUpon>

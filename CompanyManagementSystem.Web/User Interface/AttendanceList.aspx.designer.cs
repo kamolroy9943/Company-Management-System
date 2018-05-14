@@ -76,6 +76,15 @@ namespace CompanyManagementSystem.Web.User_Interface {
         protected global::System.Web.UI.WebControls.Button searchButton;
         
         /// <summary>
+        /// label control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label label;
+        
+        /// <summary>
         /// present control.
         /// </summary>
         /// <remarks>
@@ -83,6 +92,15 @@ namespace CompanyManagementSystem.Web.User_Interface {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label present;
+        
+        /// <summary>
+        /// salaryCalculator control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button salaryCalculator;
         
         /// <summary>
         /// attendanceList control.

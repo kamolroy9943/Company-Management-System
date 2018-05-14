@@ -180,10 +180,10 @@ namespace CompanyManagementSystem.Web.Data_Access_Layer
             perm[11].Value = employee.Gander;
 
             perm[12] = new SqlParameter("@DateOfBirth", SqlDbType.Date);
-            perm[12].Value = employee.DateOfBirth;
+            perm[12].Value = employee.DateOfBirth.Date;
 
             perm[13] = new SqlParameter("@JoinDate", SqlDbType.Date);
-            perm[13].Value = employee.JoinDate;
+            perm[13].Value = employee.JoinDate.Date;
 
             perm[14] = new SqlParameter("@BranchId", SqlDbType.Int);
             perm[14].Value = employee.BranchId;
@@ -243,7 +243,7 @@ namespace CompanyManagementSystem.Web.Data_Access_Layer
         {
             string query =
                 "Insert into EmployeeAttendance(EmployeeId,Date,Intime,Outtime,LateHour,HalfDay,Notes,IsPresent) values('" +
-                attendance.EmployeeId + "','" + attendance.Date + "','" + attendance.InTime + "','" +
+                attendance.EmployeeId + "','" + attendance.Date.Date + "','" + attendance.InTime + "','" +
                 attendance.OutTime + "','" + attendance.LateHour + "','" + attendance.HalfDay + "','" +
                 attendance.Notes + "','"+attendance.IsPresent+"')";
             SqlCommand command = new SqlCommand(query, _connection);
@@ -292,9 +292,9 @@ namespace CompanyManagementSystem.Web.Data_Access_Layer
                     Employee employee = new Employee();
                     employee.Id = int.Parse(reader["Id"].ToString());
                     employee.EmployeeId = reader["EmployeeId"].ToString();
-                    //employee.FirstName = reader["FirstName"].ToString();
-                    //employee.LastName = reader["LastName"].ToString();
-                    //employee.Email = reader["Email"].ToString();
+                    employee.FirstName = reader["FirstName"].ToString();
+                    employee.LastName = reader["LastName"].ToString();
+                    employee.Email = reader["Email"].ToString();
                     employees.Add(employee);
                 }
                 reader.Close();
@@ -306,7 +306,9 @@ namespace CompanyManagementSystem.Web.Data_Access_Layer
         public DataSet GetEmployeeAttendances(EmployeeAttendanceViewModel model)
         {
             DataSet data = new DataSet();
-            string query = "Select * From EmployeeAttendance where Date between '"+model.FromDate+"' and  '"+model.ToDate+"' and EmployeeId='"+model.EmployeeId+"'";
+            string query = "select * from EmployeeAttendance  WHERE Date>= '" +
+                           model.FromDate + "' and Date<= '" + model.ToDate +
+                           "'";
             SqlDataAdapter adapter = new SqlDataAdapter(query, _connection);
             _connection.Open();
             adapter.Fill(data);

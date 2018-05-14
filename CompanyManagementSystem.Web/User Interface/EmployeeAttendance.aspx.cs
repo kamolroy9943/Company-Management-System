@@ -1,17 +1,18 @@
 ﻿using CompanyManagementSystem.Web.Business_Logic_Layer;
-using CompanyManagementSystem.Web.Models;
 using CompanyManagementSystem.Web.ViewModels;
 using System;
-using System.Collections.Generic;
+using System.Web.UI.WebControls;
 
 namespace CompanyManagementSystem.Web.User_Interface
 {
     public partial class EmployeeAttendance : System.Web.UI.Page
     {
         private readonly EmployeeUserManager _employeeUserManager;
+        private readonly SectionManager _sectionManager;
 
         public EmployeeAttendance()
         {
+            _sectionManager = new SectionManager();
             _employeeUserManager = new EmployeeUserManager();
         }
 
@@ -21,12 +22,17 @@ namespace CompanyManagementSystem.Web.User_Interface
 
             if (!IsPostBack)
             {
-                var username = Session["username"] as string;
-                ICollection<Employee> emp = _employeeUserManager.GetEmployeeByUserName(username);
-                employeeDropDownBox.DataSource = emp;
-                employeeDropDownBox.DataBind();
-                employeeDropDownBox.DataTextField = "Email";
-                employeeDropDownBox.DataValueField = "Id";
+                var sections = _sectionManager.GetAllSections();
+                departmentDropDownBox.DataSource = sections;
+                departmentDropDownBox.DataBind();
+                departmentDropDownBox.DataValueField = "Id";
+                departmentDropDownBox.DataTextField = "SectionName";
+                //var username = Session["username"] as string;
+                //ICollection<Employee> emp = _employeeUserManager.GetEmployeeByUserName(username);
+                //employeeDropDownBox.DataSource = emp;
+                //employeeDropDownBox.DataBind();
+                //employeeDropDownBox.DataTextField = "Email";
+                //employeeDropDownBox.DataValueField = "Id";
                 dateTextBox.Text = DateTime.Today.ToString("dd/MM/yyyy");
                 inTimeTextBox.Text = string.Format("{0:HH:mm:ss tt}", DateTime.Now);
             }
@@ -76,6 +82,22 @@ namespace CompanyManagementSystem.Web.User_Interface
                     message.Font.Size = 20;
                 }
             }
+
+        }
+
+        protected void departmentDropDownBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int sectionId = int.Parse(departmentDropDownBox.SelectedItem.Value);
+            employeeDropDownBox.DataSource = _employeeUserManager.GetEmployeeBySectionId(sectionId);
+            employeeDropDownBox.DataBind();
+            employeeDropDownBox.DataValueField = "Id";
+            employeeDropDownBox.DataTextField = "Email";
+            ListItem listItem = new ListItem("---------Select One---------", "-1");
+            employeeDropDownBox.Items.Insert(0, listItem);
+        }
+
+        protected void employeeDropDownBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }
