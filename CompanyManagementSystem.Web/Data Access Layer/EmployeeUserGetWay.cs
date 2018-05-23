@@ -76,9 +76,9 @@ namespace CompanyManagementSystem.Web.Data_Access_Layer
         public Employee GetEmployeeById(int selectedItemValue)
         {
             Employee employee = null;
-            SqlCommand command = new SqlCommand("proc_GetEmployeeById", _connection);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@Id", selectedItemValue);
+            string query = "select * from Employee where Id='" + selectedItemValue + "'";
+            SqlCommand command = new SqlCommand(query, _connection);
+            command.CommandType = CommandType.Text;
             _connection.Open();
             SqlDataReader reader = command.ExecuteReader();
             if (reader.HasRows)
@@ -90,6 +90,7 @@ namespace CompanyManagementSystem.Web.Data_Access_Layer
                     employee.FullName = reader["FullName"].ToString();
                     employee.FirstName = reader["FirstName"].ToString();
                     employee.LastName = reader["LastName"].ToString();
+                    employee.EmployeeId = reader["EmployeeId"].ToString();
                     employee.Email = reader["Email"].ToString();
                     employee.MobileNo = reader["Mobile"].ToString();
                     employee.SectionId = int.Parse(reader["SectionId"].ToString());
@@ -138,60 +139,9 @@ namespace CompanyManagementSystem.Web.Data_Access_Layer
 
         public int AddEmployee(Employee employee)
         {
-            SqlCommand cmd = new SqlCommand("proc_Insert_Employee", _connection);
-
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            SqlParameter[] perm = new SqlParameter[16];
-            perm[0] = new SqlParameter("@FullName", SqlDbType.NVarChar, 50);
-            perm[0].Value = employee.FullName;
-
-            perm[1] = new SqlParameter("@FirstName", SqlDbType.NVarChar, 50);
-            perm[1].Value = employee.FirstName;
-
-            perm[2] = new SqlParameter("@LastName", SqlDbType.NVarChar, 50);
-            perm[2].Value = employee.LastName;
-
-            perm[3] = new SqlParameter("@EmployeeId", SqlDbType.NVarChar, 50);
-            perm[3].Value = employee.EmployeeId;
-
-            perm[4] = new SqlParameter("@Email", SqlDbType.NVarChar, 50);
-            perm[4].Value = employee.Email;
-
-            perm[5] = new SqlParameter("@RoleId", SqlDbType.Int);
-            perm[5].Value = employee.RoleId;
-
-            perm[6] = new SqlParameter("@Password", SqlDbType.NVarChar, 50);
-            perm[6].Value = employee.Password;
-
-            perm[7] = new SqlParameter("@Mobile", SqlDbType.NVarChar, 50);
-            perm[7].Value = employee.MobileNo;
-
-            perm[8] = new SqlParameter("@SectionId", SqlDbType.Int);
-            perm[8].Value = employee.SectionId;
-
-            perm[9] = new SqlParameter("@DesignationId", SqlDbType.Int);
-            perm[9].Value = employee.DesignationId;
-
-            perm[10] = new SqlParameter("@BasicSalary", SqlDbType.Int);
-            perm[10].Value = employee.BasicSalary;
-
-            perm[11] = new SqlParameter("@Gender", SqlDbType.NVarChar, 50);
-            perm[11].Value = employee.Gander;
-
-            perm[12] = new SqlParameter("@DateOfBirth", SqlDbType.Date);
-            perm[12].Value = employee.DateOfBirth.Date;
-
-            perm[13] = new SqlParameter("@JoinDate", SqlDbType.Date);
-            perm[13].Value = employee.JoinDate.Date;
-
-            perm[14] = new SqlParameter("@BranchId", SqlDbType.Int);
-            perm[14].Value = employee.BranchId;
-
-            perm[15] = new SqlParameter("@Address", SqlDbType.NVarChar, 50);
-            perm[15].Value = employee.Address;
-
-            cmd.Parameters.AddRange(perm);
+           string query= "Insert into Employee values('"+employee.FullName+ "','" + employee.FirstName + "','" + employee.LastName + "','" + employee.EmployeeId + "','" + employee.Email + "','" + employee.RoleId + "','" + employee.Password + "','" + employee.MobileNo + "','" + employee.SectionId + "','" + employee.DesignationId + "','" + employee.BasicSalary + "','" + employee.Gander + "','" + employee.DateOfBirth + "','" + employee.JoinDate + "','" + employee.BranchId + "','" + employee.Address + "')";
+            SqlCommand cmd = new SqlCommand(query, _connection);
+            cmd.CommandType = CommandType.Text;
             _connection.Open();
             int returnData = cmd.ExecuteNonQuery();
             _connection.Close();
@@ -199,9 +149,9 @@ namespace CompanyManagementSystem.Web.Data_Access_Layer
             return returnData;
         }
 
-        public ICollection<Employee> GetEmployeeByUserName(string username)
+        public Employee GetEmployeeByUserName(string username)
         {
-            ICollection<Employee> employees = new List<Employee>();
+            Employee employee= null;
             string query = "Select * From Employee where Email='" + username + "'";
             SqlCommand command = new SqlCommand(query, _connection);
             _connection.Open();
@@ -210,17 +160,18 @@ namespace CompanyManagementSystem.Web.Data_Access_Layer
             {
                 while (reader.Read())
                 {
-                    Employee employee = new Employee();
+                    employee = new Employee();
                     employee.Id = int.Parse(reader["Id"].ToString());
                     employee.FirstName = reader["FirstName"].ToString();
                     employee.LastName = reader["LastName"].ToString();
                     employee.Email = reader["Email"].ToString();
-                    employees.Add(employee);
+                    employee.RoleId = int.Parse(reader["RoleId"].ToString());
+                 
                 }
                 reader.Close();
             }
             _connection.Close();
-            return employees;
+            return employee;
         }
 
         public int UpdateEmployee(Employee employee)

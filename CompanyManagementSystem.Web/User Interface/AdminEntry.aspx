@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AdminEntry.aspx.cs" Inherits="CompanyManagementSystem.Web.User_Interface.AdminEntry" EnableEventValidation="false" %>
+﻿<%--<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AdminEntry.aspx.cs" Inherits="CompanyManagementSystem.Web.User_Interface.AdminEntry" EnableEventValidation="false" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeaderContentPlaceHolder" runat="server">
 </asp:Content>
@@ -84,4 +84,4 @@
             </div>
         </div>
     </div>
-</asp:Content>
+</asp:Content>--%>

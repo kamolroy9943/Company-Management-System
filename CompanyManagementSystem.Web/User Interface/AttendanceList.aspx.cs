@@ -24,7 +24,10 @@ namespace CompanyManagementSystem.Web.User_Interface
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            var role = (string) Session["role"];
+            if (Session["username"] == null || role!="Admin")
+                Response.Redirect("Login.aspx");
+
             if (!IsPostBack)
             {
                 ListItem listItem = new ListItem("---------Select One---------", "-1");
@@ -32,6 +35,7 @@ namespace CompanyManagementSystem.Web.User_Interface
                 sectionDropdownList.DataBind();
                 employeeIdDropdownList.Items.Insert(0, listItem);
                 sectionDropdownList.Items.Insert(0, listItem);
+                salaryCalculator.CssClass = "hide";
             }
         }
 
@@ -71,7 +75,13 @@ namespace CompanyManagementSystem.Web.User_Interface
                     Count++;
                 }
             }
-            present.Text = Count.ToString();
+
+            if (Count>0)
+            {
+                salaryCalculator.CssClass = "";
+                present.Text = Count.ToString();
+            }
+           
         }
 
        

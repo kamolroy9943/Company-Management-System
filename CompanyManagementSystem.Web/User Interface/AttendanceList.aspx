@@ -56,10 +56,13 @@
                                 <asp:Label ID="present" runat="server" Text=""></asp:Label>
 
                             </div>
-                            <div style="margin-right: 15px; height: 35px; margin-bottom: 10px; float: right; margin-top: 6px;">
-                                <asp:Button ID="salaryCalculator" runat="server" class="btn btn-primary" Text="Calculate Salary" OnClick="salaryCalculator_Click" />
+                            
+                          
+                                <div style="margin-right: 15px; height: 35px; margin-bottom: 10px; float: right; margin-top: 6px;">
+                                    <asp:Button ID="salaryCalculator" runat="server" class="btn btn-primary" Text="Calculate Salary" OnClick="salaryCalculator_Click" />
 
-                            </div>
+                                </div>
+                            
 
                             <asp:Repeater ID="attendanceList" runat="server">
                                 <HeaderTemplate>

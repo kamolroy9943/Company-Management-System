@@ -29,6 +29,10 @@ namespace CompanyManagementSystem.Web.User_Interface
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            var role = (string)Session["role"];
+            if (Session["username"] == null || role != "Admin")
+                Response.Redirect("Login.aspx");
+
             if (string.IsNullOrEmpty(Request.QueryString["Id"]))
             {
                 Response.Redirect("EmployeeEntry.aspx?Id=" + 0);

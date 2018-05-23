@@ -30,6 +30,10 @@ namespace CompanyManagementSystem.Web.User_Interface
             //Response.Redirect("EmployeeList.aspx");
             //showGridView.DataSource = model;
             //showGridView.DataBind();
+            var role = (string)Session["role"];
+            if (Session["username"] == null || role != "Admin")
+                Response.Redirect("Login.aspx");
+
             PopulateGridView();
         }
 

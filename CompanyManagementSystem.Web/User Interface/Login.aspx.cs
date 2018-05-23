@@ -15,10 +15,8 @@ namespace CompanyManagementSystem.Web.User_Interface
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (Session["username"] != null && Session["username"] != null)
-            //{
-            //    Response.Redirect("Default.aspx");
-            //}
+            Session["username"] = null;
+            Session["role"] = null;
         }
 
         protected void loginButton_Click(object sender, EventArgs e)
@@ -30,11 +28,14 @@ namespace CompanyManagementSystem.Web.User_Interface
             }
             var model = new LoginViewModel(userNameTextBox.Text, passwordTextBox.Text);
             var isExists = _employeeUserManager.EmployeeExistsOrNot(model.UserName, model.Password);
+           
             if (isExists)
             {
+                var employee = _employeeUserManager.GetEmployeeByUserName(model.UserName);
+                Session["role"] = employee.RoleId==1?"Admin":null;
                 Session["password"] = model.Password;
                 Session["username"] = model.UserName;
-                Response.Redirect("Default.aspx");
+                Response.Redirect("EmployeeList.aspx");
             }
             else
             {

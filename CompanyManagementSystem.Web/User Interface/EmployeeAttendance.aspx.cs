@@ -19,6 +19,12 @@ namespace CompanyManagementSystem.Web.User_Interface
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            var role = (string)Session["role"];
+            if (Session["username"] == null || role != "Admin")
+
+//                Session["username"]= null;
+//                Session["role"]= null;
+                Response.Redirect("Login.aspx");
 
             if (!IsPostBack)
             {
@@ -51,7 +57,7 @@ namespace CompanyManagementSystem.Web.User_Interface
 
             Attendance attendance = new Attendance();
             attendance.EmployeeId = int.Parse(employeeDropDownBox.SelectedValue);
-            attendance.Date = DateTime.Parse(dateTextBox.Text);
+            attendance.Date = DateTime.ParseExact(dateTextBox.Text, "dd/MM/yyyy", null);
             attendance.InTime = DateTime.Parse(inTimeTextBox.Text);
             attendance.OutTime = DateTime.Parse(outTimeTextBox.Text);
             attendance.LateHour = attendance.InTime.Hour - 10 > 0 ? attendance.InTime.Hour - 10 : 0;

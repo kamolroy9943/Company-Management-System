@@ -38,13 +38,6 @@
               <div class="panel-title">
                 <h5>Event Calander</h5>
               </div>
-              <div class="panel-content">
-                <div class="external-event ui-draggable label label-inverse">My Event 1</div>
-                <div class="external-event ui-draggable label label-inverse">My Event 2</div>
-                <div class="external-event ui-draggable label label-inverse">My Event 3</div>
-                <div class="external-event ui-draggable label label-inverse">My Event 4</div>
-                <div class="external-event ui-draggable label label-inverse">My Event 5</div>
-              </div>
             </div>
               <div class="Calendar"></div>
               <div class="dayClickWindow"></div>

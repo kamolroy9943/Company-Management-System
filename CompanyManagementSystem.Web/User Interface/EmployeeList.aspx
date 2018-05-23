@@ -44,15 +44,15 @@
                                 <HeaderTemplate>
                                     <table class="table table-bordered data-table">
                                     <tr>
-                                        <td>Role ID</td>
-                                        <td>Title</td>
+                                        <td>Full Name</td>
+                                        <td>Employee Code</td>
                                         <td></td>
                                     </tr>
                                 </HeaderTemplate>
                                 <ItemTemplate>
                                     <tr>
                                         <td><%#Eval("FullName")%></td>
-                                        <td><%#Eval("FirstName")%></td>
+                                        <td><%#Eval("EmployeeId")%></td>
                                         <td><asp:LinkButton ID ="lnkBtnOk" runat ="server" PostBackUrl='<%# string.Format("EmployeeEntry.aspx?Id={0}", Eval("ID"))%>' Text="Edit"></asp:LinkButton></td>
                                     </tr>
                                 </ItemTemplate>
